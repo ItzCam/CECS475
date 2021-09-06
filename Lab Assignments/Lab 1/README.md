@@ -1,3 +1,5 @@
+***OPEN IN RAW FORMAT***
+
 CECS 475
 Lab Assignment 1
 Assigned date: 09/01/2021
