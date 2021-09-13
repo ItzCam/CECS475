@@ -17,8 +17,8 @@ namespace Lab1
         public string BrokerName { get; set; }
         public List<Stock> stocks = new List<Stock>();
         public static ReaderWriterLockSlim myLock = new ReaderWriterLockSlim();
-        /*readonly string docPath = @"/Users/camwilson/Projects/Lab1/Lab1_output.txt";*/
-        readonly string docPath = @"C:\Users\Jether\Documents\CECS 475\output.txt";
+        readonly string docPath = @"/Users/camwilson/Projects/Lab1/Lab1_output.txt";
+        /*readonly string docPath = @"C:\Users\Jether\Documents\CECS 475\output.txt";*/
         public string titles = "Broker".PadRight(10) + "Stock".PadRight(15) + "Value".PadRight(10) + "Changes".PadRight(10);
 
         /// <summary>
