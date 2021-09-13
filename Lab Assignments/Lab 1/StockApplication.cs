@@ -5,17 +5,15 @@
 // StockApplication.cs
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace stuff
+namespace Lab1
 {
     class StockApplication
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Broker".PadRight(10) + "Stock".PadRight(15) + "Value".PadRight(10) + "Changes");
+
             Stock stock1 = new Stock("Technology", 160, 5, 15);
             Stock stock2 = new Stock("Retail", 30, 2, 6);
             Stock stock3 = new Stock("Banking", 90, 4, 10);
