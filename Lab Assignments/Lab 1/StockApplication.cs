@@ -5,6 +5,7 @@
 // StockApplication.cs
 
 using System;
+using System.IO;
 
 namespace Lab1
 {
@@ -12,6 +13,16 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
+            string docPath = @"/Users/camwilson/Projects/Lab1/Lab1_output.txt";
+            /*string docPath = @"C:\Users\Jether\Documents\CECS 475\output.txt";*/
+
+            // overwrite file and write in titles
+            string fileTitles = "Broker".PadRight(10) + "Stock".PadRight(15) + "Initial Value".PadRight(15) + "Current Value".PadRight(15) + "Date and Time\n";
+            using (StreamWriter titleWriter = new StreamWriter(docPath))
+            {
+                titleWriter.WriteLine(fileTitles);
+            }
+
             Console.WriteLine("Broker".PadRight(10) + "Stock".PadRight(15) + "Value".PadRight(10) + "Changes");
 
             Stock stock1 = new Stock("Technology", 160, 5, 15);

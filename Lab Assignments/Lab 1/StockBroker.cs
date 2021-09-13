@@ -17,7 +17,8 @@ namespace Lab1
         public string BrokerName { get; set; }
         public List<Stock> stocks = new List<Stock>();
         public static ReaderWriterLockSlim myLock = new ReaderWriterLockSlim();
-        readonly string docPath = @"/Users/camwilson/Projects/Lab1/Lab1_output.txt";
+        /*readonly string docPath = @"/Users/camwilson/Projects/Lab1/Lab1_output.txt";*/
+        readonly string docPath = @"C:\Users\Jether\Documents\CECS 475\output.txt";
         public string titles = "Broker".PadRight(10) + "Stock".PadRight(15) + "Value".PadRight(10) + "Changes".PadRight(10);
 
         /// <summary>
@@ -72,10 +73,13 @@ namespace Lab1
 
         private void WriteStockToFile(Stock newStock, string displayCurrentValue, string displayNumChanges)
         {
+            DateTime now = DateTime.Now;
+            string dateTimeStr = now.ToString("F");
+
             using (StreamWriter outputFile = new StreamWriter(docPath, true))
             {
-                outputFile.WriteLine(newStock.StockName.PadRight(15) +
-                        displayCurrentValue.PadRight(15) + displayNumChanges);
+                outputFile.WriteLine(this.BrokerName.PadRight(10) + newStock.StockName.PadRight(15) +
+                        newStock.InitialValue.ToString().PadRight(15) + newStock.CurrentValue.ToString().PadRight(15) + dateTimeStr);
             }
         }
     }
